@@ -2,10 +2,14 @@
  * Setup MongoDB
  */
 const mongoose = require('mongoose');
-const MONGODB_URL = (process.env.MONGODB_URL || 'mongodb://localhost/entorno')
+const MONGODB_URL = (process.env.MONGODB_URL || 'mongodb://bitbang:37017/entorno')
 console.log("MONGODB_URL " + MONGODB_URL)
 
-mongoose.connect(MONGODB_URL)
+mongoose.connect(MONGODB_URL, { 
+  user: dbUser, 
+  pass: dbPass,
+  auth: { authdb: dbAuthdb }
+})
 
 module.exports = {}
 const enabled = [ 'User', 'Org', 'Sensor', 'Device', 'Environ', 'Admin' ]

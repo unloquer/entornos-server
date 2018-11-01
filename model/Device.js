@@ -207,7 +207,7 @@ function $ifconfigUp() {
       clearTimeout(to)
       resolve()
     })    
-  }
+  })
 }
 
 /*  var retries = 5
