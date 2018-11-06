@@ -5,7 +5,8 @@ module.exports = {
 }
 
 async function authenticate (req, res, next) {
-  req.user = await User.findOne({ email: 'unloquer@gmail.com' }).exec()
+  console.log('here')
+  req.user = await User.findOne({ email: 'sgaviria@gmail.com' }).exec()
   req.org = await Org.model.findOne({ email: 'unloquer@gmail.com' }).exec()
   next()
 }
